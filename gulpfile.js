@@ -15,7 +15,7 @@ gulp.task('sass', function() {
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
-			baseDir: 'app' // Директория для сервера - app
+			baseDir: './' // Директория для сервера - app
 		},
 		notify: false // Отключаем уведомления
 	});
