@@ -4,7 +4,7 @@ class QuoteViewer {
 		this.qouteEl =  document.getElementsByClassName(qouteEl)[0]; 
 		this.nextQouteBtnEl = document.getElementsByClassName(nextQouteBtnEl)[0];
 	}
-	displayNewQute(authorName, text) {
+	displayNewQoute(authorName, text) {
 		this.authorEl.innerHTML = authorName;
 		this.qouteEl.innerHTML = text;
 	}

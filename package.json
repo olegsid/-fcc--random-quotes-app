@@ -21,6 +21,5 @@
     "gulp-sass": "^3.1.0"
   },
   "dependencies": {
-    "x2js": "^3.1.1"
   }
 }

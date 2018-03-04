@@ -8,16 +8,14 @@ let quoteViewer = new QuoteViewer('author-name', 'wiki-text', 'wiki-button');
 
 const url = function() {
 	let key = Math.floor(Math.random() * 1000000 - 1);
-	return (
-		'https://cors.now.sh/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en&callback=?' + key
-	);
+	return 'https://cors.now.sh/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en&callback=?' + key
 };
 
-const displayMessageSubscriber = (data) =>
+const displayMessageSubscriber = () =>
 	fetch(url())
 		.then(status)
 		.then((response) => response.json())
-		.then((data) => quoteViewer.displayNewQute(data.quoteAuthor, data.quoteText));
+		.then((data) => quoteViewer.displayNewQoute(data.quoteAuthor, data.quoteText));
 
 const changeColorSubscriber = (function(selector) {
 	const selected = document.querySelectorAll(selector);
@@ -29,6 +27,7 @@ const changeColorSubscriber = (function(selector) {
 })('.js-colored');
 
 const observsers = [ changeColorSubscriber, displayMessageSubscriber ];
+
 observsers.forEach((obs) => clickPublisher.subscribe(obs));
 quoteViewer.onClick(() => clickPublisher.deliver());
 
