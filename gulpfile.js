@@ -18,7 +18,7 @@ gulp.task('browser-sync', function() {
 		server: {
 			baseDir: './', // Директория для сервера - app
 		},
-		notify: false, // Отключаем уведомления
+		notify: false, // Отключаем уведомления Access-Control-Allow-Origin
 		cors: true
 	});
 });
