@@ -8,7 +8,8 @@ body {
   body .link {
     margin: auto;
     color: whitesmoke;
-    text-decoration: none; }
+    text-decoration: none;
+    font-size: 25px; }
 
 .wrapper {
   margin: 150px auto auto;
@@ -25,7 +26,8 @@ body {
     border-radius: 3px;
     background-color: wheat;
     padding: 5px 10px;
-    font-weight: bold; }
+    font-weight: bold;
+    color: whitesmoke; }
   #app .wiki-text {
     font-size: 30px; }
   #app .author-name {
@@ -37,7 +39,7 @@ body {
 
 .content {
   position: relative;
-  max-width: 600px;
+  width: 600px;
   min-height: 250px;
   background-color: wheat;
   border-radius: 5px;

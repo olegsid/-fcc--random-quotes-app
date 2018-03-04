@@ -1,16 +1,17 @@
 body {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	background-color: yellowgreen;
 	justify-content: center;
-    height: 100vh;
-    font-family: 'Nanum Pen Script', cursive;
+	height: 100vh;
+	font-family: 'Nanum Pen Script', cursive;
 
-    .link{
-        margin: auto;
-        color:whitesmoke;
-        text-decoration: none;
-    }
+	.link {
+		margin: auto;
+		color: whitesmoke;
+		text-decoration: none;
+		font-size: 25px;
+	}
 }
 
 .wrapper {
@@ -22,29 +23,30 @@ body {
 	.wiki-button {
 		position: absolute;
 		bottom: 20px;
-        right: 20px;
-        outline: none;
-        border: 2px solid indianred;
-        border-radius: 3px;
-        background-color: wheat; 
-        padding: 5px 10px;
-        font-weight: bold;
+		right: 20px;
+		outline: none;
+		border: 2px solid indianred;
+		border-radius: 3px;
+		background-color: wheat;
+		padding: 5px 10px;
+		font-weight: bold;
+		color: whitesmoke;
 	}
 	.wiki-text {
 		font-size: 30px;
 	}
 	.author-name {
 		position: absolute;
-        bottom: 20px;
-        font-size: 20px;
-        left: 20px;
-        font-weight: bold;
+		bottom: 20px;
+		font-size: 20px;
+		left: 20px;
+		font-weight: bold;
 	}
 }
 
 .content {
 	position: relative;
-	max-width: 600px;
+	width: 600px;
 	min-height: 250px;
 	background-color: wheat;
 	border-radius: 5px;
