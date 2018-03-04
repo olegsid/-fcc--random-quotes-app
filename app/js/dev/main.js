@@ -2,8 +2,6 @@ const Publisher = require('./Publisher');
 const QuoteViewer = require('./QuoteViewer');
 const status = require('./utils').status;
 const randomHexColor = require('./utils').randomHexColor;
-const parseXml = require('./utils').parseXml;
-const xmlToJson = require('./utils').xmlToJson;
 
 let clickPublisher = new Publisher();
 let quoteViewer = new QuoteViewer('author-name', 'wiki-text', 'wiki-button');
