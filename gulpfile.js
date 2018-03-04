@@ -3,21 +3,23 @@ const gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	fs = require('fs'),
 	browserify = require('browserify');
+	var cors = require('cors');
 
 gulp.task('sass', function() {
 	return gulp
 		.src('app/sass/**/*.scss') // Берем источник
 		.pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
-		.pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
+		.pipe(gulp.dest('public/css')) // Выгружаем результата в папку app/css
 		.pipe(browserSync.reload({ stream: true })); // Обновляем CSS на странице при изменении
 });
 
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
-			baseDir: './' // Директория для сервера - app
+			baseDir: './', // Директория для сервера - app
 		},
-		notify: false // Отключаем уведомления
+		notify: false, // Отключаем уведомления
+		cors: true
 	});
 });
 
@@ -31,11 +33,21 @@ gulp.task('browserify', function() {
 	return browserify(options)
 		.transform('babelify', { presets: [ 'es2015' ], sourceMaps: true })
 		.bundle()
-		.pipe(fs.createWriteStream('app/js/prod/bundle.js'));
+		.pipe(fs.createWriteStream('public/js/bundle.js'));
 });
 
-gulp.task('watch', [ 'browser-sync', 'sass', 'browserify' ], function() {
-	gulp.watch('app/sass/**/*.scss', [ 'sass' ]); // Наблюдение за sass файлами
-	gulp.watch('app/css/.*', browserSync.reload); // Наблюдение за другими типами файлов
-	gulp.watch('app/js/dev/**/*.js', [ 'browserify', browserSync.reload ]);
-});
+gulp
+	.task('watch', [ 'browser-sync', 'sass', 'browserify' ], function() {
+		gulp.watch('app/sass/**/*.scss', [ 'sass' ]); // Наблюдение за sass файлами
+		gulp.watch('public/**/.*', browserSync.reload);
+		gulp.watch('./**/*.html', browserSync.reload);
+		gulp.watch('app/js/dev/**/*.js', [ 'browserify', browserSync.reload ]);
+	})
+	.on('error', swallowError);
+
+function swallowError(error) {
+	// If you want details of the error in the console
+	console.log(error.toString());
+
+	this.emit('end');
+}

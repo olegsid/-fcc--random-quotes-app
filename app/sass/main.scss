@@ -1,4 +1,52 @@
 body {
-    display: block;   
-    background-color: yellowgreen;
+    display: flex;
+    flex-direction: column;
+	background-color: yellowgreen;
+	justify-content: center;
+    height: 100vh;
+    font-family: 'Nanum Pen Script', cursive;
+
+    .link{
+        margin: auto;
+        color:whitesmoke;
+        text-decoration: none;
+    }
+}
+
+.wrapper {
+	margin: 150px auto auto;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#app {
+	align-self: center;
+	.wiki-button {
+		position: absolute;
+		bottom: 20px;
+        right: 20px;
+        outline: none;
+        border: 2px solid indianred;
+        border-radius: 3px;
+        background-color: wheat; 
+        padding: 5px 10px;
+        font-weight: bold;
+	}
+	.wiki-text {
+		font-size: 30px;
+	}
+	.author-name {
+		position: absolute;
+        bottom: 20px;
+        font-size: 20px;
+        left: 20px;
+        font-weight: bold;
+	}
+}
+
+.content {
+	position: relative;
+	width: 600px;
+	min-height: 250px;
+	background-color: wheat;
+	border-radius: 5px;
+	padding: 20px 20px 40px 20px;
 }
