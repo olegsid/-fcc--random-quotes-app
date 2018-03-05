@@ -18,8 +18,8 @@
     "cors": "^2.8.4",
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "pipe-error-stop": "0.0.11"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

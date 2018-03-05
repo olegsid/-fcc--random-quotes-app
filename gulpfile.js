@@ -2,13 +2,14 @@ const gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	browserSync = require('browser-sync'),
 	fs = require('fs'),
-	browserify = require('browserify');
-	var cors = require('cors');
+	browserify = require('browserify'),
+	pipeErrorStop = require('pipe-error-stop');
 
 gulp.task('sass', function() {
 	return gulp
 		.src('app/sass/**/*.scss') // Берем источник
 		.pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
+		.pipe(pipeErrorStop())
 		.pipe(gulp.dest('public/css')) // Выгружаем результата в папку app/css
 		.pipe(browserSync.reload({ stream: true })); // Обновляем CSS на странице при изменении
 });
@@ -33,6 +34,7 @@ gulp.task('browserify', function() {
 	return browserify(options)
 		.transform('babelify', { presets: [ 'es2015' ], sourceMaps: true })
 		.bundle()
+		.pipe(pipeErrorStop())
 		.pipe(fs.createWriteStream('public/js/bundle.js'));
 });
 
