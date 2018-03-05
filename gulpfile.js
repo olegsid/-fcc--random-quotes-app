@@ -45,11 +45,3 @@ gulp
 		gulp.watch('./**/*.html', browserSync.reload);
 		gulp.watch('app/js/dev/**/*.js', [ 'browserify', browserSync.reload ]);
 	})
-	.on('error', swallowError);
-
-function swallowError(error) {
-	// If you want details of the error in the console
-	console.log(error.toString());
-
-	this.emit('end');
-}
