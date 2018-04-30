@@ -15,7 +15,11 @@ function transformToTweet(tweet){
 	let endocodedTweet = encodeURIComponent(tweet);
 	return `${endpoint}${endocodedTweet}`
 }
-	
 
-module.exports = { status, randomHexColor, transformToTweet};
+function createUrl() {
+	let key = Math.floor(Math.random() * 1000000 - 1);
+	return `https://cors.now.sh/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en&callback=?${key}`
+};
+
+module.exports = { status, randomHexColor, transformToTweet, createUrl};
 
