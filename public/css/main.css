@@ -17,17 +17,24 @@ body {
 
 #app {
   align-self: center; }
-  #app .wiki-button {
+  #app .buttons-container {
+    display: flex;
+    justify-content: space-between;
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 20px; }
+  #app .tweet-button,
+  #app .wiki-button {
     outline: none;
     border: 2px solid indianred;
     border-radius: 3px;
     background-color: wheat;
     padding: 5px 10px;
     font-weight: bold;
-    color: whitesmoke; }
+    color: whitesmoke;
+    text-decoration: none; }
+  #app .tweet-button {
+    margin-right: 20px; }
   #app .wiki-text {
     font-size: 30px; }
   #app .author-name {

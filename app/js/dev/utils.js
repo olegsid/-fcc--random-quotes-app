@@ -10,6 +10,12 @@ function randomHexColor() {
 	return "#"+((1<<24)*Math.random()|0).toString(16);
 }
 
+function transformToTweet(tweet){
+	let endpoint = 'https://twitter.com/intent/tweet?text=';
+	let endocodedTweet = encodeURIComponent(tweet);
+	return `${endpoint}${endocodedTweet}`
+}
+	
 
-module.exports = { status, randomHexColor};
+module.exports = { status, randomHexColor, transformToTweet};
 
