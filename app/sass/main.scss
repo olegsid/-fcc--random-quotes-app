@@ -56,8 +56,11 @@ body {
 .content {
 	position: relative;
 	width: 600px;
-	min-height: 250px;
 	background-color: wheat;
 	border-radius: 5px;
 	padding: 20px 20px 40px 20px;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	max-height: min-content;
 }
